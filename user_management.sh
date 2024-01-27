@@ -9,7 +9,7 @@ user_management_script() {
 
     while true; do
         clear
-        printf "Bienvenue a la gestion des utilisateurs\n"
+        printf "Gestion des utilisateurs\n"
         #Affichage du menu
         printf "1. Creation d'user\n"
         printf "2. Liste des users\n"

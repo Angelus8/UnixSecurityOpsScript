@@ -6,7 +6,7 @@ user_management_script() {
 
     while true; do
         clear
-        printf "Bienvenue a la gestion des groupes\n"
+        printf "Gestion des groupes\n"
         #Affichage du menu
         printf "1. Creation d'un groupe\n"
         printf "2. Verification d'un groupe\n"
