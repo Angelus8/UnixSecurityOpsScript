@@ -26,17 +26,13 @@ user_management_script() {
             user_create_script
             ;;
         2)
-            printf "Liste des users\n"
-            awk -F: '{print "Username:",$1}' /etc/passwd
+            user_liste_script
             ;;
         3)
-            printf "Information d'un user\n"
-            read -p "Username: " user_search
-            user_research_script "$user_search"
+            user_research_script
             ;;
         4)
-            read -p "L'utilisateur a supprimé: " user_del
-            user_delete_script "$user_del"
+            user_delete_script
             ;;
         5)
             printf "Aurevoir\n"

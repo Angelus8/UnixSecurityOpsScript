@@ -84,3 +84,7 @@ user_create_script() {
         user_addPassword_script "$user_pass" "$username"
     fi
 }
+
+user_liste_script(){
+    awk -F: '{print "Username:",$1}' /etc/passwd
+}

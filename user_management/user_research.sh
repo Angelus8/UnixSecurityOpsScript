@@ -2,7 +2,7 @@
 
 user_research_script(){
 
-    local user_search=$1
+    read -p "Username: " user_search
 
     res=$(grep "^$user_search" /etc/passwd)
 

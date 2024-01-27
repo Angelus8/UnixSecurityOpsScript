@@ -16,21 +16,21 @@ is_no(){
 }
 
 #ma fonction de suppression
-user_delete_script(){
+group_delete_script(){
 
-    read -p "L'utilisateur a supprimé: " user_search
+    read -p "Nom du groupe: " group_name
 
     #recherche d'un user dans le fichier /etc/passwd
-    res=$(grep "^$user_search" /etc/passwd)
+    res=$(grep "^$group_name" /etc/passwd)
 
     if [ -n "$res" ]; then
-        read -p "Voulez-vous vraiment supprimer l'user $user_search(oui/non): " user_answer
+        read -p "Voulez-vous vraiment supprimer l'user $group_name(oui/non): " user_answer
 
         #verification de la reponse
         if is_yes "$user_answer"; then
 
-            if sudo userdel -r "$user_search" 2>/dev/null; then
-                printf "Suppression de l'user %s effectué.\n" "$user_search"
+            if sudo groupdel "$group_name" 2>/dev/null; then
+                printf "Suppression de groupe %s effectué.\n" "$group_name"
             else
                 exit_code=$?
                 if [ $exit_code -ne 0 ]; then
@@ -39,13 +39,13 @@ user_delete_script(){
             fi
 
         elif is_no "$user_answer"; then
-            printf "Suppression de %s annulé.\n" "$user_search"
+            printf "Suppression de %s annulé.\n" "$group_name"
         else
             echo "Reponse invalide"
         fi
 
     else
-        printf "L'utilisateur %s n'existe pas.\n" "$user_search"
+        printf "Le groupe %s n'existe pas.\n" "$group_name"
     fi
 
 }

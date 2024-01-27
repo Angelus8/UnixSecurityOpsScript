@@ -2,6 +2,7 @@
 
 #appel de mes fonctions
 source "user_management.sh"
+source "group_management.sh"
 
 while true; do
     clear
@@ -17,11 +18,10 @@ while true; do
     #structure de controle selon le choix
     case $choice in
         1)
-            printf "Gestion des utilisateurs\n"
             user_management_script
             ;;
         2)
-            printf "Gestion des groupes\n"
+            user_management_script
             ;;
         3)
             printf "Gestion des mots de passes\n"
