@@ -1,8 +1,8 @@
 #!/bin/bash
 #import
-source "./user_management/user_create.sh"
-source "./user_management/user_research.sh"
-source "./user_management/user_delete.sh"
+source "user_management/user_create.sh"
+source "user_management/user_research.sh"
+source "user_management/user_delete.sh"
 
 user_management_script() {
 
@@ -23,7 +23,6 @@ user_management_script() {
         #structure de controle selon le choix
         case $choice in
         1)
-            printf "Creation d'un user\n"
             user_create_script
             ;;
         2)
