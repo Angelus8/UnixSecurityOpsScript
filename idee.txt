@@ -1,0 +1,31 @@
+1. Gestion des users
+2. Gestion des groupes
+3. Gestion des mots de passes
+
+
+
+details ( Gestion des users )
+	- CREATE: creation d'un user
+		- username
+		- user id 
+		- groupe id
+		- home directory
+		- shell user
+		
+	- READ: Liste des users
+	- UPDATE: modification d'un user
+	- DELETE: suppression d'un user 
+
+details ( Gestion des groupes )
+	- CREATE: Creation d'un groupe
+	- READ: Liste des groupes
+	- UPDATE: modifier groupe
+	- DELETE: Supprimer un groupe
+	- Ajouter un user a un groupe
+	- Supprimer un user d'un groupe
+	- Voir groupes d'un user
+
+details (Gestion des mots passes user)
+	- Modification du mot de passe d'un user
+	- Modifications des parametres(date d'expiration:-E, nombre de jours avant changement de password:-M,
+		nombre de jours avant warning:-W, nombre de jours inactifs avant verouillage:-I)
