@@ -29,7 +29,7 @@ group_create_script() {
 
     read -p "ID du groupe: " group_id
 
-    verify_group=$(grep "^username" /etc/group)
+    verify_group=$(grep "^$group_name" /etc/group)
 
     if [ -n "$verify_group" ]; then
         printf "Le groupe %s existe deja\n" "$verify_group"
