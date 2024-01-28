@@ -11,14 +11,16 @@ user_management_script() {
         clear
         printf "Gestion des utilisateurs\n"
         #Affichage du menu
-        printf "1. Creation d'user\n"
-        printf "2. Liste des users\n"
-        printf "3. Information d'un user\n"
-        printf "4. Suppression d'un user\n"
-        printf "5. Quitter\n\n"
+        printf "1. Creation d'un utilisateur\n"
+        printf "2. Liste des utilisateurs\n"
+        printf "3. Information d'un utilisateur\n"
+        printf "4. Suppression d'un utilisateur\n"
+        printf "5. Verouiller un utilisateur\n"
+        printf "6. Dévérouiller un utilisateur\n"
+        printf "7. Quitter\n\n"
 
         #le choix de l'utilisateur
-        read -p "Choisissez une option(1-5): " choice
+        read -p "Choisissez une option(1-7): " choice
 
         #structure de controle selon le choix
         case $choice in
@@ -35,11 +37,17 @@ user_management_script() {
             user_delete_script
             ;;
         5)
-            printf "Aurevoir\n"
+            user_lock_script
+            ;;
+        6) 
+            user_unlock_script
+            ;;
+        7)
+            printf "Bye!!\n"
             exit 0
             ;;
         *)
-            printf "Choix invalide. Choisir une option entre 1 et 5.\n"
+            printf "Choix invalide. Choisir une option entre 1 et 7.\n"
             ;;
         esac
 

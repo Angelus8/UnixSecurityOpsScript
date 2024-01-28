@@ -3,6 +3,7 @@
 #appel de mes fonctions
 source "user_management.sh"
 source "group_management.sh"
+source "password_management.sh"
 
 while true; do
     clear
@@ -21,13 +22,12 @@ while true; do
             user_management_script
             ;;
         2)
-            user_management_script
+            group_management_script
             ;;
         3)
-            printf "Gestion des mots de passes\n"
+            password_management_script
             ;;
         4)
-            printf "Aurevoir\n"
             exit 0
             ;;
         *)

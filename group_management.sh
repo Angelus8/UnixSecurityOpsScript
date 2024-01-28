@@ -1,7 +1,11 @@
 #!/bin/bash
 #import de mes fonction
+source "group_management/group_create.sh"
+source "group_management/group_delete.sh"
+source "group_management/group_member.sh"
+source "group_management/group_verify.sh"
 
-user_management_script() {
+group_management_script() {
 
 
     while true; do
@@ -11,11 +15,12 @@ user_management_script() {
         printf "1. Creation d'un groupe\n"
         printf "2. Verification d'un groupe\n"
         printf "3. Voir les membres d'un groupe\n"
-        printf "4. Suppression d'un groupe\n"
-        printf "5. Quitter\n\n"
+        printf "4. Ajout d'un user à un groupe\n"
+        printf "5. Suppression d'un groupe\n"
+        printf "6. Quitter\n\n"
 
         #le choix de l'utilisateur
-        read -p "Choisissez une option(1-5): " choice
+        read -p "Choisissez une option(1-6): " choice
 
         #structure de controle selon le choix
         case $choice in
@@ -29,14 +34,17 @@ user_management_script() {
             group_member_script
             ;;
         4)
-            group_delete_script
+            group_add_script
             ;;
         5)
+            group_delete_script
+            ;;
+        6)
             printf "Aurevoir\n"
             exit 0
             ;;
         *)
-            printf "Choix invalide. Choisir une option entre 1 et 5.\n"
+            printf "Choix invalide. Choisir une option entre 1 et 6.\n"
             ;;
         esac
 
